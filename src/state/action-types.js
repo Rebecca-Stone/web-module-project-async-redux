@@ -1,0 +1,1 @@
+export const ADD_ALL_POKEMON = 'ADD_ALL_POKEMON'

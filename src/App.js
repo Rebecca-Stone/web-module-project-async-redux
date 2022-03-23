@@ -1,12 +1,34 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
+import PokemonList from "./components/PokemonList"
 
-function App() {
+import { connect } from 'react-redux';
+import * as actionCreators from './state/action-creators'
+
+
+function App(props) {
+  const { 
+    pokemon,
+    fetchAllPokemon
+  } = props
+  console.log('props in app.js', props.pokemon)
+  useEffect(() => {
+    fetchAllPokemon()
+  }, [])
   return (
     <div className="App">
-      Async Redux Project
+      <h1>Async Redux Project</h1>
+      <PokemonList pokemon={pokemon} />
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  console.log('state in app.js', state)
+  return {
+    pokemon: state.pokemon,
+  }
+};
+
+
+export default connect(mapStateToProps, actionCreators)(App);
