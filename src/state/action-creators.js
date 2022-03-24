@@ -13,6 +13,6 @@ export const fetchAllPokemon = () => (dispatch) => {
       dispatch({ type: ADD_ALL_POKEMON, payload: pokemonNames });
     })
     .catch((err) => {
-        debugger
+      debugger;
     });
 };
