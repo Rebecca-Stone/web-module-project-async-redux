@@ -12,8 +12,10 @@ function App(props) {
   }, []);
   return (
     <div className="App">
-      <h1>Async Redux Project</h1>
-      <PokemonList pokemon={pokemon} />
+      <h1 className="header">Async Redux Project</h1>
+      <PokemonList 
+      pokemon={pokemon} />
+      <h3 className="footer">Pokemon</h3>
     </div>
   );
 }
