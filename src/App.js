@@ -11,7 +11,7 @@ function App(props) {
     pokemon,
     fetchAllPokemon
   } = props
-  console.log('props in app.js', props.pokemon)
+  // console.log('props in app.js', pokemon)
   useEffect(() => {
     fetchAllPokemon()
   }, [])
@@ -24,9 +24,9 @@ function App(props) {
 }
 
 const mapStateToProps = state => {
-  console.log('state in app.js', state)
+  // console.log('state in app.js', state)
   return {
-    pokemon: state.pokemon,
+    pokemon: state,
   }
 };
 
